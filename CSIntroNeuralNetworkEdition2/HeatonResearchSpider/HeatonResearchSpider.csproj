@@ -1,0 +1,83 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{632A1460-BB77-4DE8-A699-E828BD0B0864}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HeatonResearchSpider</RootNamespace>
+    <AssemblyName>HeatonResearchSpider</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\HeatonResearchSpider.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HTML\FormUtility.cs" />
+    <Compile Include="HTML\HTMLTag.cs" />
+    <Compile Include="HTML\ParseHTML.cs" />
+    <Compile Include="HTML\PeekableInputStream.cs" />
+    <Compile Include="HTML\URLUtility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RSS\RSS.cs" />
+    <Compile Include="RSS\RSSItem.cs" />
+    <Compile Include="Spider\Filter\RobotsFilter.cs" />
+    <Compile Include="Spider\Filter\SpiderFilter.cs" />
+    <Compile Include="Spider\Logging\Logger.cs" />
+    <Compile Include="Spider\Spider.cs" />
+    <Compile Include="Spider\SpiderException.cs" />
+    <Compile Include="Spider\SpiderInputStream.cs" />
+    <Compile Include="Spider\SpiderOptions.cs" />
+    <Compile Include="Spider\SpiderParseHTML.cs" />
+    <Compile Include="Spider\SpiderReportable.cs" />
+    <Compile Include="Spider\Workload\Memory\MemoryWorkloadManager.cs" />
+    <Compile Include="Spider\Workload\Memory\URLStatus.cs" />
+    <Compile Include="Spider\Workload\SQL\Oracle\OracleHolder.cs" />
+    <Compile Include="Spider\Workload\SQL\Oracle\OracleWorkloadManager.cs" />
+    <Compile Include="Spider\Workload\SQL\RepeatableStatement.cs" />
+    <Compile Include="Spider\Workload\SQL\SQLHolder.cs" />
+    <Compile Include="Spider\Workload\SQL\SQLWorkloadManager.cs" />
+    <Compile Include="Spider\Workload\SQL\Status.cs" />
+    <Compile Include="Spider\Workload\WorkloadException.cs" />
+    <Compile Include="Spider\Workload\WorkloadManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
