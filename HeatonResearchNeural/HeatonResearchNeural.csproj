@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D624CAB2-2A2E-4236-ACA6-7FD0256C9D0E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HeatonResearchNeural</RootNamespace>
+    <AssemblyName>HeatonResearchNeural</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activation\ActivationFunction.cs" />
+    <Compile Include="Activation\ActivationLinear.cs" />
+    <Compile Include="Activation\ActivationSigmoid.cs" />
+    <Compile Include="Activation\ActivationTANH.cs" />
+    <Compile Include="Anneal\SimulatedAnnealing.cs" />
+    <Compile Include="SOM\NormalizeInput.cs" />
+    <Compile Include="SOM\SelfOrganizingMap.cs" />
+    <Compile Include="SOM\TrainSelfOrganizingMap.cs" />
+    <Compile Include="Util\ReadCSV.cs" />
+    <Compile Include="Util\SerializeObject.cs" />
+    <Compile Include="Exception\NeuralNetworkError.cs" />
+    <Compile Include="Exception\MatrixError.cs" />
+    <Compile Include="Feedforward\FeedforwardLayer.cs" />
+    <Compile Include="Feedforward\FeedforwardNetwork.cs" />
+    <Compile Include="Feedforward\Train\Anneal\NeuralSimulatedAnnealing.cs" />
+    <Compile Include="Feedforward\Train\Backpropagation\Backpropagation.cs" />
+    <Compile Include="Feedforward\Train\Backpropagation\BackpropagationLayer.cs" />
+    <Compile Include="Feedforward\Train\Genetic\NeuralChromosome.cs" />
+    <Compile Include="Feedforward\Train\Genetic\NeuralGeneticAlgorithm.cs" />
+    <Compile Include="Feedforward\Train\Genetic\TrainingSetNeuralChromosome.cs" />
+    <Compile Include="Feedforward\Train\Genetic\TrainingSetNeuralGeneticAlgorithm.cs" />
+    <Compile Include="Feedforward\Train\Train.cs" />
+    <Compile Include="Genetic\Chromosome.cs" />
+    <Compile Include="Genetic\GeneticAlgorithm.cs" />
+    <Compile Include="Genetic\MateWorker.cs" />
+    <Compile Include="Hopfield\Hopfield.cs" />
+    <Compile Include="Matrix\BiPolarUtil.cs" />
+    <Compile Include="Matrix\Matrix.cs" />
+    <Compile Include="Matrix\MatrixCODEC.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Matrix\MatrixMath.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Prune\Prune.cs" />
+    <Compile Include="Util\BoundNumbers.cs" />
+    <Compile Include="Util\ErrorCalculation.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
