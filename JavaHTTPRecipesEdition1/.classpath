@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path=""/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="jar/axis.jar"/>
+	<classpathentry kind="lib" path="jar/commons-discovery-0.2.jar"/>
+	<classpathentry kind="lib" path="jar/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="jar/googleapi.jar"/>
+	<classpathentry kind="lib" path="jar/jaxrpc.jar"/>
+	<classpathentry kind="lib" path="jar/log4j-1.2.8.jar"/>
+	<classpathentry kind="lib" path="jar/mysql-connector-java-3.1.13-bin.jar"/>
+	<classpathentry kind="lib" path="jar/saaj.jar"/>
+	<classpathentry kind="lib" path="jar/wsdl4j-1.5.1.jar"/>
+	<classpathentry kind="output" path=""/>
+</classpath>
