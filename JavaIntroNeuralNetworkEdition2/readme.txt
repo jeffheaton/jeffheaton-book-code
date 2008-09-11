@@ -2,83 +2,6 @@ Introduction to Neural Networks with Java, 2nd Edition
 by Jeff Heaton
 ISBN: 1-60439-008-5
 ===============================================================================
-
-
-
-This archive contains the following examples:
-
-Hopfield Neural Network (Chapter 2)
------------------------------------
-/Ch2/Hopfield
-Hopfield Neural network, allows you to train a 4X4 Hopfield network.
-
-
-XorExample (Chapter 3)
-----------------------
-/Ch3/XorExample
-Train a neural network to recognize the XOR function.
-
-
-Delta Rule Example (Chapter 4)
-------------------------------
-/ch4/delta
-Train using the delta rule.
-
-
-Kohonen Neural Network (Chapter 6)
-----------------------------------
-/ch6/TestKohonen
-Demonstrates the Kohonen neural network.
-
-
-Optical Character Recognition (Chapter 7)
------------------------------------------
-/ch7/ocr
-Handwriting recognition program tells you what letter you drew.
-
-
-Traveling Salesman with Genetic Algorithms (Chapter 8)
-------------------------------------------------------
-/ch8/TravelingSalesman
-Solve the traveling salesman problem with a genetic algorithm.
-
-
-Traveling Salesman with Simulated Annealing (Chapter 9)
--------------------------------------------------------
-/ch9/TravelingSalesman2
-Solve the traveling salesman problem with simulated annealing.
-
-
-XOR with Genetic Algorithms and Simulated Annealing (Chapter 10)
-----------------------------------------------------------------
-/ch10/XorMinimaExample
-Search for local minimia in the XOR solution network.
-
-
-Selective Prune Neural Network (Chapter 11)
--------------------------------------------
-/ch11/IncreasePrune
-Prune a JOONE neural network with a selective prune algorithm.
-
-
-Increase Prune Neural Network (Chapter 11)
-------------------------------------------
-/ch11/SelectPrune
-Prune a JOONE neural network with a selective prune algorithm.
-
-
-Fuzzy Logic Graph (Chapter 12)
-------------------------------
-/ch12/Graph
-Fuzzy logic example that plots charts of fuzzy sets.
-
-
-Fuzzy Temperature (Chapter 12)
-------------------------------
-/ch12/Temperature
-Fuzzy logic example that sorts temperatures into fuzzy sets.
-
-
 ===============================================================================
 
 This archive contains the Java source code from the book "Introduction to 
@@ -94,117 +17,76 @@ http://www.heatonresearch.com/articles/series/1/
 ===============================================================================
 Table of Contents from "Introduction to Neural Networks with Java"
 
-Programming Neural Networks in Java will show the intermediate to advanced Java 
-programmer how to create neural networks. This book attempts to teach neural 
-network programming through two mechanisms. First the reader is shown how to 
-create a reusable neural network package that could be used in any Java program. 
-Second, this reusable neural network package is applied to several real world 
-problems that are commonly faced by IS programmers. This book covers such 
-topics as Kohonen neural networks, multi layer neural networks, training, back 
-propagation, and many other topics. 
+Introduction to Neural Networks with Java, Second Edition, introduces the Java programmer 
+to the world of Neural Networks and Artificial Intelligence. Neural network architectures, 
+such as the feedforward, Hopfield, and self-organizing map architectures are discussed. 
+Training techniques, such as backpropagation, genetic algorithms and simulated annealing 
+are also introduced. Practical examples are given for each neural network. Examples 
+include the traveling salesman problem, handwriting recognition, financial prediction, 
+game strategy, mathematical functions, and Internet bots. All Java source code is available 
+online for easy downloading. 
 
-Chapter 1: Introduction to Neural Networks
-Computers can perform many operations considerably faster than a human being. 
-Yet there are many tasks where the computer falls considerably short of its 
-human counterpart. There are numerous examples of this. Given two pictures a 
-preschool child could easily tell the difference between a cat and a dog. Yet 
-this same simple problem would confound today's computers.
+Chapter 1 provides an overview of neural networks. You will be introduced to the mathematical 
+underpinnings of neural networks and how to calculate their values manually. You will also 
+see how neural networks use weights and thresholds to determine their output. Matrix math plays 
+a central role in neural network processing. 
 
-Chapter 2: Understanding Neural Networks
-The neural network has long been the mainstay of Artificial Intelligence (AI) 
-programming. As programmers we can create programs that do fairly amazing 
-things. Programs can automate repetitive tasks such as balancing checkbooks or 
-calculating the value of an investment portfolio. While a program could easily 
-maintain a large collection of images, it could not tell us what any of those 
-images are of. Programs are inherently unintelligent and uncreative. Ordinary 
-computer programs are only able to perform repetitive tasks.
+Chapter 2 introduces matrix operations and demonstrates how to implement them in Java. The 
+mathematical concepts of matrix operations used later in this book are discussed. Additionally, 
+Java classes are provided which accomplish each of the required matrix operations. One of the 
+most basic neural networks is the Hopfield neural network. 
 
-Chapter 3: Using Multilayer Neural Networks
-In this chapter you will see how to use the feed-forward multilayer 
-neural network. This neural network architecture has become the mainstay of 
-modern neural network programming. In this chapter you will be shown two ways 
-that you can implement such a neural network. 
+Chapter 3 demonstrates how to use a Hopfield Neural Network. You will be shown how to 
+construct a Hopfield neural network and how to train it to recognize patterns. 
 
-Chapter 4: How a Machine Learns
-In the preceding chapters we have seen that a neural network can be taught to 
-recognize patterns by adjusting the weights of the neuron connections. Using 
-the provided neural network class we were able to teach a neural network to 
-learn the XOR problem. We only touched briefly on how the neural network was 
-able to learn the XOR problem. In this chapter we will begin to see how a 
-neural network learns.
+Chapter 4 introduces the concept of machine learning. To train a neural network, the weights 
+and thresholds are adjusted until the network produces the desired output. There are many 
+different ways training can be accomplished. This chapter introduces the different training 
+methods. 
 
-Chapter 5: Understanding Back Propagation
-In this chapter we shall examine one of the most common neural network 
-architectures-- the feed foreword back propagation neural network. This neural 
-network architecture is very popular because it can be applied to many different 
-tasks. To understand this neural network architecture we must examine how it is 
-trained and how it processes the pattern. The name "feed forward back 
-propagation neural network" gives some clue as to both how this network is 
-trained and how it processes the pattern. 
+Chapter 5 introduces perhaps the most common neural network architecture, the feedforward 
+backpropagation neural network. This type of neural network is the central focus of this book. 
+In this chapter, you will see how to construct a feedforward neural network and how to train 
+it using backpropagation. Backpropagation may not always be the optimal training algorithm. 
 
-Chapter 6: Understanding the Kohonen Neural Network
-In the previous chapter you learned about the feed forward back propagation 
-neural network. While feed forward neural networks are very common, they are 
-not the only architecture for neural networks. In this chapter we will examine 
-another very common architecture for neural networks.
+Chapter 6 expands upon backpropagation by showing how to train a network using a genetic 
+algorithm. A genetic algorithm creates a population of neural networks and only allows the 
+best networks to “mate” and produce offspring. Simulated annealing can also be a very 
+effective means of training a feedforward neural network. 
 
-Chapter 7: OCR with the Kohonen Neural Network
-In the previous chapter you learned how to construct a Kohonen neural network. 
-You learned that a Kohonen neural network can be used to classify samples into 
-several groups. In this chapter we will closely examine a specific application 
-of the Kohonen neural network. The Kohonen neural network will be applied to 
-Optical Character Recognition (OCR).
+Chapter 7 continues the discussion of training methods by introducing simulated annealing. 
+Simulated annealing simulates the heating and cooling of a metal to produce an optimal solution. 
+Neural networks may contain unnecessary neurons. 
 
-Chapter 8: Understanding Genetic Algorithms
-In the previous chapter you saw a practical application of the Kohonen neural 
-network. Up to this point the book has focused primarily on neural networks. 
-In this and Chapter 9 we will focus on two artificial intelligence technologies 
-not directly related to neural networks. We will begin with the genetic 
-algorithm. In the next chapter you will learn about simulated annealing. 
-Finally Chapter 10 will apply both of these concepts to neural networks. 
-Please note that at this time JOONE, which was covered in previous chapters, 
-has no support for GAs’ or simulated annealing so we will build it.
+Chapter 8 explains how to prune a neural network to its optimal size. Pruning allows unnecessary 
+neurons to be removed from the neural network without adversely affecting the error 
+rate of the network. The neural network will process information more quickly with fewer 
+neurons. Prediction is another popular use for neural networks. 
 
-Chapter 9: Understanding Simulated Annealing
-In this chapter we will examine another technique that allows you to train 
-neural networks. In Chapter 8 you were introduced to using genetic algorithms 
-to train a neural network. This chapter will show you how you can use another 
-popular algorithm, which is named simulated annealing. Simulated annealing has 
-become a popular method of neural network training. As you will see in this 
-chapter, it can be applied to other uses as well.
+Chapter 9 introduces temporal neural networks, which attempt to predict the future. Prediction 
+networks can be applied to many different problems, such as the prediction of sunspot cycles, 
+weather, and the financial markets. 
 
-Chapter 10: Eluding Local Minima
-In Chapter 5 backpropagation was introduced. Backpropagation is a very 
-effective means of training a neural network. However, there are some inherent 
-flaws in the back propagation training algorithm. One of the most fundamental 
-flaws is the tendency for the backpropagation training algorithm to fall into 
-a “local minima”. A local minimum is a false optimal weight matrix that 
-prevents the backpropagation training algorithm from seeing the true solution.
+Chapter 10 builds upon chapter 9 by demonstrating how to apply temporal neural networks to 
+the financial markets. The resulting neural network attempts to predict the direction of 
+the S & P 500. Another neural network architecture is the self-organizing map (SOM). SOM’s 
+are often used to group input into categories and are generally trained with an unsupervised 
+training algorithm. An SOM uses a winner-takes-all strategy, in which the output is provided 
+by the winning neuron—output is not produced by each of the neurons. 
 
-Chapter 11: Pruning Neural Networks
-In chapter 10 we saw that you could use simulated annealing and genetic 
-algorithms to better train a neural network. These two techniques employ 
-various algorithms to better fit the weights of the neural network to the 
-problem that the neural network is to be applied to. These techniques do 
-nothing to adjust the structure of the neural network.
+Chapter 11 provides an introduction to SOMs and demonstrates how to use them.
+Handwriting recognition is a popular use for SOMs. 
 
-Chapter 12: Fuzzy Logic
-In this chapter we will examine fuzzy logic. Fuzzy logic is a branch of 
-artificial intelligence that is not directly related to the neural networks 
-that we have been examining so far. Fuzzy logic is often used to process data 
-before it is fed to a neural network, or to process the outputs from the neural 
-network. In this chapter we will examine cases of how this can be done. We will 
-also look at an example program that uses fuzzy logic to filter incoming SPAM 
-emails.
+Chapter 12 continues where  chapter 11 leaves off, by demonstrating how to use an SOM to 
+read handwritten characters. The neural network must be provided with a sample of the handwriting 
+that it is to analyze. This handwriting is categorized using the 26 characters of the 
+Latin alphabet. The neural network is then able to recognize new characters. 
 
-Appendix A.	JOONE Reference
-Information about JOONE.
+Chapter 13 introduces bot programming and explains how to use a neural network to help 
+identify data. Bots are computer programs that perform repetitive tasks. An HTTP bot is a 
+special type of bot that uses the web much like a human uses it. The neural network is 
+trained to recognize the specific types of data for which the bot is searching. 
 
-Appendix B.	Mathematical Background
-Discusses some of the mathematics used in this book.
-
-Appendix C.	Compiling Examples under Windows
-How to install JOONE and the examples on Windows.
-
-Appendix D.	Compiling Examples under Linux/UNIX
-How to install JOONE and the examples on UNIX/Linux.
+The book ends with chapter 14, which discusses the future of neural networks, quantum 
+computing, and how it applies to neural networks. The Encog neural network framework is 
+also introduced. 
