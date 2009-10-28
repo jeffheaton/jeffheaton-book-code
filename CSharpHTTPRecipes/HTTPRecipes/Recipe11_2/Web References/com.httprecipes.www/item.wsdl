@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://www.httprecipes.com/1/11/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.httprecipes.com/1/11/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.httprecipes.com/1/11/soap/">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="translateRequest">
+    <wsdl:part name="inputString" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="translateResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="PigLatinTranslatorPortType">
+    <wsdl:operation name="translate">
+      <wsdl:input message="tns:translateRequest" />
+      <wsdl:output message="tns:translateResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PigLatinTranslatorBinding" type="tns:PigLatinTranslatorPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="translate">
+      <soap:operation soapAction="http://www.httprecipes.com/1/11/soap/index.php/translate" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://www.httprecipes.com/1/11/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://www.httprecipes.com/1/11/soap/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PigLatinTranslator">
+    <wsdl:port name="PigLatinTranslatorPort" binding="tns:PigLatinTranslatorBinding">
+      <soap:address location="http://www.httprecipes.com/1/11/soap/index.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
