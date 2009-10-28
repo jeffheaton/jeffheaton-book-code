@@ -54,9 +54,9 @@ public class ErrorCalculation {
 	public void updateError(final double actual[], final double ideal[]) {
 		for (int i = 0; i < actual.length; i++) {
 			final double delta = ideal[i] - actual[i];
-			this.globalError += delta * delta;
-			this.setSize += ideal.length;
+			this.globalError += delta * delta;			
 		}
+		this.setSize += ideal.length;
 	}
 
 }
