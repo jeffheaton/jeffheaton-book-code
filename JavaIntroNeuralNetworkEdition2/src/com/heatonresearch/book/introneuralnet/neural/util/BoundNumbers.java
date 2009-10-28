@@ -47,4 +47,13 @@ public class BoundNumbers {
 			return d;
 		}
 	}
+	
+	/**
+	 * A bounded version of Math.exp.
+	 * @param d What to calculate.
+	 * @return The result.
+	 */
+	public static double exp(final double d) {
+		return bound(Math.exp(d));
+	}
 }

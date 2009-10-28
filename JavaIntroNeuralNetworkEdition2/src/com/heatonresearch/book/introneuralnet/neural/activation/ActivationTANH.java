@@ -12,6 +12,8 @@
  */
 package com.heatonresearch.book.introneuralnet.neural.activation;
 
+import com.heatonresearch.book.introneuralnet.neural.util.BoundNumbers;
+
 /**
  * ActivationTANH: The hyperbolic tangent activation function takes the
  * curved shape of the hyperbolic tangent.  This activation function produces
@@ -34,7 +36,7 @@ public class ActivationTANH implements ActivationFunction {
 	 * @return The output from the function.
 	 */
 	public double activationFunction(double d) {
-		final double result = (Math.exp(d*2.0)-1.0)/(Math.exp(d*2.0)+1.0);
+		final double result = (BoundNumbers.exp(d*2.0)-1.0)/(BoundNumbers.exp(d*2.0)+1.0);
 		return result;
 	}
 	
