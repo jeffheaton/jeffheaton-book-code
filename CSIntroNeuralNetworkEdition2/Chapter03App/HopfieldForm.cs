@@ -40,23 +40,23 @@ namespace Chapter03App
         private void CollectMatrixValues()
         {
             this.network.LayerMatrix[0, 0] = int.Parse(this.r1c1.Text);
-            this.network.LayerMatrix[1, 0] = int.Parse(this.r1c2.Text);
-            this.network.LayerMatrix[2, 0] = int.Parse(this.r1c3.Text);
-            this.network.LayerMatrix[3, 0] = int.Parse(this.r1c4.Text);
+            this.network.LayerMatrix[0, 1] = int.Parse(this.r1c2.Text);
+            this.network.LayerMatrix[0, 2] = int.Parse(this.r1c3.Text);
+            this.network.LayerMatrix[0, 3] = int.Parse(this.r1c4.Text);
 
-            this.network.LayerMatrix[0, 1] = int.Parse(this.r2c1.Text);
+            this.network.LayerMatrix[1, 0] = int.Parse(this.r2c1.Text);
             this.network.LayerMatrix[1, 1] = int.Parse(this.r2c2.Text);
-            this.network.LayerMatrix[2, 1] = int.Parse(this.r2c3.Text);
-            this.network.LayerMatrix[3, 1] = int.Parse(this.r2c4.Text);
+            this.network.LayerMatrix[1, 2] = int.Parse(this.r2c3.Text);
+            this.network.LayerMatrix[1, 3] = int.Parse(this.r2c4.Text);
 
-            this.network.LayerMatrix[0, 2] = int.Parse(this.r3c1.Text);
-            this.network.LayerMatrix[1, 2] = int.Parse(this.r3c2.Text);
+            this.network.LayerMatrix[2, 0] = int.Parse(this.r3c1.Text);
+            this.network.LayerMatrix[2, 1] = int.Parse(this.r3c2.Text);
             this.network.LayerMatrix[2, 2] = int.Parse(this.r3c3.Text);
-            this.network.LayerMatrix[3, 2] = int.Parse(this.r3c4.Text);
+            this.network.LayerMatrix[2, 3] = int.Parse(this.r3c4.Text);
 
-            this.network.LayerMatrix[0, 3] = int.Parse(this.r4c1.Text);
-            this.network.LayerMatrix[1, 3] = int.Parse(this.r4c2.Text);
-            this.network.LayerMatrix[2, 3] = int.Parse(this.r4c3.Text);
+            this.network.LayerMatrix[3, 0] = int.Parse(this.r4c1.Text);
+            this.network.LayerMatrix[3, 1] = int.Parse(this.r4c2.Text);
+            this.network.LayerMatrix[3, 2] = int.Parse(this.r4c3.Text);
             this.network.LayerMatrix[3, 3] = int.Parse(this.r4c4.Text);
         }
 
