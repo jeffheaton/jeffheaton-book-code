@@ -201,11 +201,8 @@ namespace HeatonResearchNeural.Genetic
                     }
                 }
             }
-
-            // copy results
-            offspring1.CalculateCost();
-            offspring2.CalculateCost();
-
+        
+            // mutate
             if (rand.NextDouble() < this.geneticAlgorithm.MutationPercent)
             {
                 offspring1.Mutate();
@@ -214,6 +211,10 @@ namespace HeatonResearchNeural.Genetic
             {
                 offspring2.Mutate();
             }
+
+            // calculate the cost
+            offspring1.CalculateCost();
+            offspring2.CalculateCost();
 
         }
 
