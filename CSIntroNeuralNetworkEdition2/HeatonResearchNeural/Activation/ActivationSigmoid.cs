@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using HeatonResearchNeural.Util;
 
 namespace HeatonResearchNeural.Activation
 {
@@ -20,7 +21,7 @@ namespace HeatonResearchNeural.Activation
         /// <returns>The ouput from the function.</returns>
         public double ActivationFunction(double d)
         {
-            return 1.0 / (1 + Math.Exp(-1.0 * d));
+            return 1.0 / (1 + BoundNumbers.Exp(-1.0 * d));
         }
 
         /// <summary>

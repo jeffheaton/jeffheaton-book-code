@@ -37,5 +37,10 @@ namespace HeatonResearchNeural.Util
                 return d;
             }
         }
+
+        public static double Exp(double d)
+        {
+            return Bound(Math.Exp(d));
+        }
     }
 }
