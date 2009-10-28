@@ -191,16 +191,17 @@ abstract public class Chromosome<GENE_TYPE, GA_TYPE extends GeneticAlgorithm<?>>
 			}
 		}
 
-		// copy results
-		offspring1.calculateCost();
-		offspring2.calculateCost();
-
+		// mutate
 		if (Math.random() < this.geneticAlgorithm.getMutationPercent()) {
 			offspring1.mutate();
 		}
 		if (Math.random() < this.geneticAlgorithm.getMutationPercent()) {
 			offspring2.mutate();
 		}
+		
+		// calculate cost
+		offspring1.calculateCost();
+		offspring2.calculateCost();
 
 	}
 
