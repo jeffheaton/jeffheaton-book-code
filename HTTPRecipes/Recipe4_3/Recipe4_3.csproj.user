@@ -1,5 +1,0 @@
-﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <StartArguments>http://www.httprecipes.com/images/logo.gif logo.gif</StartArguments>
-  </PropertyGroup>
-</Project>
