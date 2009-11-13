@@ -3,16 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.Globalization;
 
 namespace HeatonResearchNeural.Util
 {
     public class ReadCSV
     {
-        /// <summary>
-        /// The format that dates are expected to be in.
-        /// </summary>
-        public const String dateFormat = "yyyy-MM-dd";
-
         /// <summary>
         /// The file to read.
         /// </summary>
@@ -36,7 +32,7 @@ namespace HeatonResearchNeural.Util
         /// <returns>A formatted date and time.</returns>
         public static String DisplayDate(DateTime date)
         {
-            return date.ToString(dateFormat);
+            return date.ToString();
         }
 
         /// <summary>
@@ -48,7 +44,7 @@ namespace HeatonResearchNeural.Util
         {
             try
             {
-                return DateTime.Parse(dateFormat);
+                return DateTime.ParseExact(when, "yyyy-MM-dd",CultureInfo.InvariantCulture);
             }
             catch (FormatException)
             {
@@ -119,7 +115,7 @@ namespace HeatonResearchNeural.Util
         public DateTime GetDate(String column)
         {
             String str = Get(column);
-            return DateTime.Parse(ReadCSV.dateFormat);
+            return DateTime.Parse(str);
         }
 
         /// <summary>
