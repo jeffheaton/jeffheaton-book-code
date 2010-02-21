@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Born\YearBornBot.cs" />
     <Compile Include="CommonWords.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="Gather\CollectionWorker.cs" />
@@ -54,6 +55,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScanReportable.cs" />
     <Compile Include="Text.cs" />
+    <Compile Include="Train\AnalyzeSentences.cs" />
+    <Compile Include="Train\HistogramElement.cs" />
+    <Compile Include="Train\TrainBot.cs" />
+    <Compile Include="Train\TrainingSet.cs" />
+    <Compile Include="Train\WordHistogram.cs" />
     <Compile Include="YahooSearch.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,10 +71,6 @@
       <Project>{632A1460-BB77-4DE8-A699-E828BD0B0864}</Project>
       <Name>HeatonResearchSpider</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Born\" />
-    <Folder Include="Train\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

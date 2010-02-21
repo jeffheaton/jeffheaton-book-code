@@ -1,4 +1,14 @@
-﻿using System;
+﻿/// Introduction to Neural Networks with C#, 2nd Edition
+/// Copyright 2008 by Heaton Research, Inc. 
+/// http://www.heatonresearch.com/book/programming-neural-networks-cs-2.html
+/// 
+/// ISBN-10: 1604390093
+/// ISBN-13: 978-1604390094
+/// 
+/// This class is released under the:
+/// GNU Lesser General Public License (LGPL)
+/// http://www.gnu.org/copyleft/lesser.html
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,10 +20,10 @@ using HeatonResearch.Spider.HTML;
 
 namespace Chapter13Bot
 {
-    class YahooSearch
+    public class YahooSearch
     {
 
-        private ICollection<Uri> doSearch(Uri url)
+        private ICollection<Uri> DoSearch(Uri url)
         {
 
             ICollection<Uri> result = new List<Uri>();
@@ -55,20 +65,12 @@ namespace Chapter13Bot
             return result;
         }
 
-        /**
-         * Called to extract a list from the specified Uri.
-         * 
-         * @param Uri
-         *            The Uri to extract the list from.
-         * @param listType
-         *            What type of list, specify its beginning tag (i.e.
-         *            <UL>)
-         * @param optionList
-         *            Which list to search, zero for first.
-         * @throws IOException
-         *             Thrown if an IO exception occurs.
-         */
-        public ICollection<Uri> search(String searchFor)
+        /// <summary>
+        /// Perform a Yahoo search, return a list of url's.
+        /// </summary>
+        /// <param name="searchFor">What to search for.</param>
+        /// <returns>The urls found.</returns>
+        public ICollection<Uri> Search(String searchFor)
         {
             ICollection<Uri> result = null;
 
@@ -94,7 +96,7 @@ namespace Chapter13Bot
             {
                 try
                 {
-                    result = doSearch(Uri);
+                    result = DoSearch(Uri);
                     done = true;
                 }
                 catch (IOException e)

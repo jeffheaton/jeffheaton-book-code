@@ -1,4 +1,14 @@
-﻿using System;
+﻿/// Introduction to Neural Networks with Java, 2nd Edition
+/// Copyright 2008 by Heaton Research, Inc. 
+/// http://www.heatonresearch.com/books/java-neural-2/
+/// 
+/// ISBN-10: 1604390093
+/// ISBN-13: 978-1604390094
+/// 
+/// This class is released under the:
+/// GNU Lesser General Public License (LGPL)
+/// http://www.gnu.org/copyleft/lesser.html
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,11 +22,9 @@ namespace Chapter13Bot.Gather
     {
         private GatherForTrain bot;
 
-        private ManualResetEvent eventHandler;
-
-        /*
-         * The search object to use.
-         */
+        /// <summary>
+        /// The search object to use.
+        /// </summary>
         private YahooSearch search;
 
         private String name;
@@ -31,34 +39,27 @@ namespace Chapter13Bot.Gather
             this.search = new YahooSearch();
         }
 
-        public void call()
+        public void Call()
         {
             try
             {
-                scanPerson(this.name, this.year);
-                this.bot.reportDone(this.name + ", done scanning.");
-                if (this.eventHandler != null)
-                {
-                    this.eventHandler.Set();
-                }
+                ScanPerson(this.name, this.year);
+                this.bot.ReportDone(this.name + ", done scanning.");
+
             }
             catch (Exception e)
             {
-                this.bot.reportDone(this.name + ", error encountered.");
+                this.bot.ReportDone(this.name + ", error encountered.");
                 Console.WriteLine(e);
                 Console.WriteLine(e.StackTrace);
                 throw e;
             }
         }
 
-        public void setEvent(ManualResetEvent eventHandler)
-        {
-            this.eventHandler = eventHandler;
-        }
 
-        private void scanPerson(String name, int year)
+        private void ScanPerson(String name, int year)
         {
-            ICollection<Uri> c = this.search.search(name);
+            ICollection<Uri> c = this.search.Search(name);
             int i = 0;
 
             foreach (Uri u in c)
@@ -66,7 +67,7 @@ namespace Chapter13Bot.Gather
                 try
                 {
                     i++;
-                    Text.checkURL(this.bot, u, year);
+                    Text.CheckURL(this.bot, u, year);
                 }
                 catch (IOException)
                 {
