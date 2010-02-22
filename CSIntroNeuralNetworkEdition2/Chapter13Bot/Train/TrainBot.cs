@@ -74,7 +74,7 @@ namespace Chapter13Bot.Train
 
         public void Process()
         {
-            this.network = NetworkUtil.createNetwork();
+            this.network = NetworkUtil.CreateNetwork();
             Console.WriteLine("Preparing training sets...");
             this.common = new CommonWords(Config.FILENAME_COMMON_WORDS);
             this.histogramGood = new WordHistogram(this.common);

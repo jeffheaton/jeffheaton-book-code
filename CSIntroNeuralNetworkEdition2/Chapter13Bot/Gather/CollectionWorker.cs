@@ -15,6 +15,7 @@ using System.Text;
 using System.IO;
 
 using System.Threading;
+using System.Net;
 
 namespace Chapter13Bot.Gather
 {
@@ -52,7 +53,6 @@ namespace Chapter13Bot.Gather
                 this.bot.ReportDone(this.name + ", error encountered.");
                 Console.WriteLine(e);
                 Console.WriteLine(e.StackTrace);
-                throw e;
             }
         }
 
@@ -67,12 +67,13 @@ namespace Chapter13Bot.Gather
                 try
                 {
                     i++;
+                    Console.WriteLine(name + "," + "Scanning URL " + i + "/" + c.Count);
                     Text.CheckURL(this.bot, u, year);
                 }
-                catch (IOException)
+                catch (Exception)
                 {
-
-                }
+                    // ignore anything that might go wrong on these websites
+                }                
             }
         }
     }

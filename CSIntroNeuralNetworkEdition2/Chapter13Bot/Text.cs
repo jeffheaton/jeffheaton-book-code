@@ -39,7 +39,8 @@ namespace Chapter13Bot
             String ignoreUntil = null;
 
             WebRequest http = HttpWebRequest.Create(url);
-            HttpWebResponse response = (HttpWebResponse)http.GetResponse();
+            http.Timeout = 10000;
+            HttpWebResponse response = (HttpWebResponse)http.GetResponse();            
             Stream istream = response.GetResponseStream();
             ParseHTML html = new ParseHTML(istream);
 

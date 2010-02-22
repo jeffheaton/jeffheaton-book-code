@@ -17,78 +17,80 @@ using System.IO;
 using System.Threading;
 
 using HeatonResearch.Spider.HTML;
+using System.Xml;
+using System.Web;
 
 namespace Chapter13Bot
 {
     public class YahooSearch
     {
+        private ICollection<Uri> result = new List<Uri>();
 
-        private ICollection<Uri> DoSearch(Uri url)
+        private void HandleResult(XmlElement parent)
         {
-
-            ICollection<Uri> result = new List<Uri>();
-            // submit the search
-            WebRequest http = HttpWebRequest.Create(url);
-            HttpWebResponse response = (HttpWebResponse)http.GetResponse();
-            Stream istream = response.GetResponseStream();
-            ParseHTML parse = new ParseHTML(istream);
-            StringBuilder buffer = new StringBuilder();
-            bool capture = false;
-
-            // parse the results
-            int ch;
-            while ((ch = parse.Read()) != -1)
+            foreach (XmlNode childNode in parent.ChildNodes)
             {
-                if (ch == 0)
+                if (childNode is XmlElement)
                 {
-                    HTMLTag tag = parse.Tag;
-                    if (tag.Name.Equals("Uri", StringComparison.CurrentCultureIgnoreCase))
+                    if (childNode.Name.Equals("Url"))
                     {
-                        buffer.Length = 0;
-                        capture = true;
-                    }
-                    else if (tag.Name.Equals("/Uri", StringComparison.CurrentCultureIgnoreCase))
-                    {
-                        result.Add(new Uri(buffer.ToString()));
-                        buffer.Length = 0;
-                        capture = false;
-                    }
-                }
-                else
-                {
-                    if (capture)
-                    {
-                        buffer.Append((char)ch);
+                        result.Add(new Uri(childNode.InnerText));
                     }
                 }
             }
+        }
+
+        private void HandleResultSet(XmlElement parent)
+        {
+            foreach (XmlNode childNode in parent.ChildNodes)
+            {
+                if (childNode is XmlElement)
+                {
+                    if (childNode.Name.Equals("Result"))
+                    {
+                        HandleResult((XmlElement)childNode);
+                    }
+                }
+            }
+        }
+
+
+        private ICollection<Uri> DoSearch(Uri url)
+        {
+            result.Clear();
+            // submit the search
+            WebRequest http = HttpWebRequest.Create(url);
+            HttpWebResponse response = (HttpWebResponse)http.GetResponse();
+
+            Stream istream = response.GetResponseStream();
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load(istream);
+
+            foreach (XmlNode node in doc.ChildNodes)
+            {
+                if (node is XmlElement)
+                {
+                    if (node.Name.Equals("ResultSet"))
+                    {
+                        HandleResultSet((XmlElement)node);
+                    }
+                }
+            }
+
+
             return result;
         }
 
-        /// <summary>
-        /// Perform a Yahoo search, return a list of url's.
-        /// </summary>
-        /// <param name="searchFor">What to search for.</param>
-        /// <returns>The urls found.</returns>
+
         public ICollection<Uri> Search(String searchFor)
         {
             ICollection<Uri> result = null;
 
-            // build the Uri
-            MemoryStream mstream = new MemoryStream();
-            FormUtility form = new FormUtility(mstream, null);
-            form.Add("appid", "YahooDemo");
-            form.Add("results", "100");
-            form.Add("query", searchFor);
-            form.Complete();
-
-            System.Text.ASCIIEncoding enc = new System.Text.ASCIIEncoding();
-
-            String str = enc.GetString(mstream.GetBuffer());
-
-            Uri Uri = new Uri(
-                   "http://search.yahooapis.com/WebSearchService/V1/webSearch?"
-                           + str);
+            StringBuilder url = new StringBuilder();
+            url.Append("http://search.yahooapis.com/WebSearchService/V1/webSearch?");
+            url.Append("appid=YahooDemo&results=100&query=");
+            url.Append(HttpUtility.UrlEncode(searchFor));
 
             int tries = 0;
             bool done = false;
@@ -96,7 +98,7 @@ namespace Chapter13Bot
             {
                 try
                 {
-                    result = DoSearch(Uri);
+                    result = DoSearch(new Uri(url.ToString()));
                     done = true;
                 }
                 catch (IOException e)
@@ -112,7 +114,8 @@ namespace Chapter13Bot
             }
 
             return result;
-
         }
+
     }
+
 }
