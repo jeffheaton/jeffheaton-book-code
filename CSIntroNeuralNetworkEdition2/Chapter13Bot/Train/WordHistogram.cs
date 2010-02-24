@@ -20,6 +20,7 @@ namespace Chapter13Bot.Train
     /// Build a histogram of how many occurrences of
     /// each word.
     /// </summary>
+    [Serializable]
     public class WordHistogram
     {
         private CommonWords common;
@@ -79,10 +80,13 @@ namespace Chapter13Bot.Train
             {
                 if (this.histogram.ContainsKey(word))
                 {
-                    HistogramElement element = this.histogram[word];
-                    element = new HistogramElement(word, 0);
-                    this.histogram[word] = element;
+                    HistogramElement element = this.histogram[word]; 
                     element.Increase();
+                }
+                else
+                {
+                    HistogramElement element = new HistogramElement(word, 1);
+                    this.histogram[word] = element;
                 }
 
             }
@@ -135,7 +139,10 @@ namespace Chapter13Bot.Train
 
         public HistogramElement Get(String word)
         {
-            return this.histogram[word.ToLower()];
+            if( this.histogram.ContainsKey(word) )
+                return this.histogram[word.ToLower()];
+            else
+                return null;
         }
 
         public CommonWords Common

@@ -20,6 +20,7 @@ namespace Chapter13Bot
     /// Holds a list of common words in the English
     /// language.
     /// </summary>
+    [Serializable]
     public class CommonWords
     {
         private IDictionary<String, int> words;
@@ -34,7 +35,7 @@ namespace Chapter13Bot
             int index = 0;
             while ((line = reader.ReadLine()) != null)
             {
-                this.words.Add(line.Trim().ToLower(), index++);
+                this.words[line.Trim().ToLower()] =  index++;
             }
 
             reader.Close();

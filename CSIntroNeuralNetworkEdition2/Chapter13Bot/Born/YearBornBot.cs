@@ -111,15 +111,27 @@ namespace Chapter13Bot.Born
             {
                 Console.WriteLine("Scanning URL's from Yahoo.");
             }
+
+            int resultYear = -1;
+
             foreach (Uri u in c)
             {
-
+                Console.Write("Scanning URL #1:");
                 i++;
                 Text.CheckURL(this, u, 0);
+                resultYear = GetResult();
+                if (resultYear == -1)
+                {
+                    Console.WriteLine(" no result so far.");
+                }
+                else
+                {
+                    Console.WriteLine(" may have been born in " + resultYear);
+                }
 
             }
 
-            int resultYear = GetResult();
+            resultYear = GetResult();
             if (resultYear == -1)
             {
                 Console.WriteLine("Could not determine when " + name

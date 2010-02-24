@@ -18,6 +18,7 @@ namespace Chapter13Bot.Train
     /// <summary>
     /// One element in the word histogram.
     /// </summary>
+    [Serializable]
     public class HistogramElement: IComparable
     {
 

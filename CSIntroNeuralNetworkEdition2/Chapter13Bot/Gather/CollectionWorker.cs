@@ -42,18 +42,10 @@ namespace Chapter13Bot.Gather
 
         public void Call()
         {
-            try
-            {
                 ScanPerson(this.name, this.year);
                 this.bot.ReportDone(this.name + ", done scanning.");
 
-            }
-            catch (Exception e)
-            {
-                this.bot.ReportDone(this.name + ", error encountered.");
-                Console.WriteLine(e);
-                Console.WriteLine(e.StackTrace);
-            }
+
         }
 
 
@@ -70,7 +62,7 @@ namespace Chapter13Bot.Gather
                     Console.WriteLine(name + "," + "Scanning URL " + i + "/" + c.Count);
                     Text.CheckURL(this.bot, u, year);
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
                     // ignore anything that might go wrong on these websites
                 }                

@@ -42,7 +42,7 @@ namespace Chapter13Bot
                 else if (String.Compare(args[0], "born", true) == 0)
                 {
                     YearBornBot bot = new YearBornBot();
-                    bot.Process("Bill Gates");
+                    bot.Process(args[1]);
                 }
             }
 

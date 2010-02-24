@@ -125,7 +125,7 @@ namespace Chapter13Bot.Train
         private void TrainNetworkBackpropBackprop()
         {
             HeatonResearchNeural.Feedforward.Train.Train train = new Backpropagation(this.network, this.input,
-                   this.ideal, 0.7, 0.7);
+                   this.ideal, 0.7, 0.5);
 
             int epoch = 1;
 
