@@ -181,7 +181,7 @@ namespace Chapter10SP500
         private void trainNetworkBackprop()
         {
             Train train = new Backpropagation(this.network, this.input,
-                   this.ideal, 0.00001, 0.1);
+                   this.ideal, 0.000001, 0.1);
             double lastError = Double.MaxValue;
             int epoch = 1;
             int lastAnneal = 0;

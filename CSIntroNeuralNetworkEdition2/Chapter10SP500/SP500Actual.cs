@@ -44,7 +44,7 @@ namespace Chapter10SP500
                 FinancialSample sample = (FinancialSample)samplesArray[offset
                        + i];
                 input[i] = sample.getPercent();
-                input[i + this.outputSize] = sample.getRate();
+                input[i + this.inputSize] = sample.getRate();
             }
         }
 
