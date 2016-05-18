@@ -1,0 +1,20 @@
+﻿<Properties StartupItem="Chapter03Console/Chapter03Console.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="HeatonResearchNeural/Matrix/Matrix.cs">
+    <Files>
+      <File FileName="HeatonResearchSpider/HeatonResearchSpider.csproj" Line="75" Column="3" />
+      <File FileName="Chapter03App/Chapter03App.csproj" Line="88" Column="24" />
+      <File FileName="Chapter03Console/Chapter03Console.csproj" Line="1" Column="1" />
+      <File FileName="Chapter03Pattern/Chapter03Pattern.csproj" Line="83" Column="39" />
+      <File FileName="Chapter03App/HopfieldApp.cs" Line="1" Column="1" />
+      <File FileName="Chapter03App/HopfieldForm.cs" Line="49" Column="54" />
+      <File FileName="Chapter03Console/ConsoleHopfield.cs" Line="33" Column="18" />
+      <File FileName="HeatonResearchNeural/Matrix/Matrix.cs" Line="93" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Chapter03Console PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
