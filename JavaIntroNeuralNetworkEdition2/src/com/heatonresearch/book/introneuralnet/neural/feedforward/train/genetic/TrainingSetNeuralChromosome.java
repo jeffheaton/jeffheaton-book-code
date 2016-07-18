@@ -73,8 +73,5 @@ public class TrainingSetNeuralChromosome extends
 
 		// copy the new genes
 		super.setGenes(list);
-
-		calculateCost();
-
 	}
 }
