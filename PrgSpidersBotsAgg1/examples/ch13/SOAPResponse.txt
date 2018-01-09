@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Content-Type: text/xml; charset="utf-8"
+Content-Length: ###
+
+<SOAP-ENV:Envelope
+  xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+  SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+   <SOAP-ENV:Body>
+       <m: GetCurrentTemperature xmlns:m="Some-URI">
+           <Temperature>34.5</GetCurrentTemperature>
+       </m: GetCurrentTemperature>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

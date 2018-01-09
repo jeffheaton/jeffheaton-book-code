@@ -1,0 +1,1 @@
+echo to run this program you must configure translate.jsp to run from a web server

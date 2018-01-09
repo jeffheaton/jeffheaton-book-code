@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<BankAccount>
+  <Transaction>
+    <Date>8/12/01</Date>
+    <Amount>-1,200.00</Amount>
+    <Number>1002</Number>
+    <Payee>Cable TV</Payee>
+    <Address1>My Cable Company</Address1>
+    <Address2>257 Fresno Street</Address2>
+    <Address3>St. Louis, MO 63125</Address3>
+    <Category>utility</Category>
+  </Transaction>	
+  <Transaction>
+    <Date>6/13/01</Date>
+    <Amount>-80.24</Amount>
+    <Number>1003</Number>
+    <Payee>Computer Store</Payee>
+    <Category>Computer Stuff</Category>
+  </Transaction>
+</BankAccount>
