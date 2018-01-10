@@ -63,7 +63,7 @@ public class Backpropagation implements Train {
 	private final double momentum;
 
 	/**
-	 * THe network that is being trained.
+	 * The network that is being trained.
 	 */
 	private final FeedforwardNetwork network;
 
