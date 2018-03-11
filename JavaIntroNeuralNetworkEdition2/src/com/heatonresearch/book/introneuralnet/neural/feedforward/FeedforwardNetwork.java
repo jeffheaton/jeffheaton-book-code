@@ -148,7 +148,7 @@ public class FeedforwardNetwork implements Serializable {
 		final FeedforwardNetwork result = new FeedforwardNetwork();
 
 		for (final FeedforwardLayer layer : this.layers) {
-			final FeedforwardLayer clonedLayer = new FeedforwardLayer(layer
+			final FeedforwardLayer clonedLayer = new FeedforwardLayer(layer.getActivationFunction(), layer
 					.getNeuronCount());
 			result.addLayer(clonedLayer);
 		}
