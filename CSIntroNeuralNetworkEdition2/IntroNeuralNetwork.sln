@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter04Delta", "Chapter04
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter05XOR", "Chapter5XOR\Chapter05XOR.csproj", "{ED4E7B63-E30D-4EC2-883C-BBEA6473EEF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter07AnnealXOR", "Chapter6XOR\Chapter07AnnealXOR.csproj", "{D1E5330B-F2AC-47A2-83AE-881DFA15A529}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter06GeneticXOR", "Chapter6GeneticXOR\Chapter06GeneticXOR.csproj", "{29BED91A-D1A5-4626-9971-81ECD12021DE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter06TicTacToe", "Chapter6TicTacToe\Chapter06TicTacToe.csproj", "{BE24F5B2-E45F-4460-B37D-5136B040EB0B}"
@@ -40,6 +38,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter12OCR", "Chapter12OCR\Chapter12OCR.csproj", "{8DB27218-5F41-4A60-8E19-629633465CAA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter13Bot", "Chapter13Bot\Chapter13Bot.csproj", "{2754D454-D69E-4044-B30F-C90D2034AC25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter07AnnealXOR", "Chapter6XOR\Chapter07AnnealXOR.csproj", "{D1E5330B-F2AC-47A2-83AE-881DFA15A529}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,10 +71,6 @@ Global
 		{ED4E7B63-E30D-4EC2-883C-BBEA6473EEF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED4E7B63-E30D-4EC2-883C-BBEA6473EEF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED4E7B63-E30D-4EC2-883C-BBEA6473EEF3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D1E5330B-F2AC-47A2-83AE-881DFA15A529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1E5330B-F2AC-47A2-83AE-881DFA15A529}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D1E5330B-F2AC-47A2-83AE-881DFA15A529}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D1E5330B-F2AC-47A2-83AE-881DFA15A529}.Release|Any CPU.Build.0 = Release|Any CPU
 		{29BED91A-D1A5-4626-9971-81ECD12021DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{29BED91A-D1A5-4626-9971-81ECD12021DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29BED91A-D1A5-4626-9971-81ECD12021DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -127,6 +123,10 @@ Global
 		{2754D454-D69E-4044-B30F-C90D2034AC25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2754D454-D69E-4044-B30F-C90D2034AC25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2754D454-D69E-4044-B30F-C90D2034AC25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1E5330B-F2AC-47A2-83AE-881DFA15A529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1E5330B-F2AC-47A2-83AE-881DFA15A529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1E5330B-F2AC-47A2-83AE-881DFA15A529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1E5330B-F2AC-47A2-83AE-881DFA15A529}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
